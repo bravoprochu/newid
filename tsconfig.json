@@ -15,6 +15,19 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@otherModules/*": ["./src/app/otherModules/*"],
+      "@sharedAnimations/*": ["./src/app/shared/animations/*"],
+      "@sharedComponents/*": ["./src/app/shared/components/*"],
+      "@sharedConst/*": ["./src/app/shared/const/*"],
+      "@sharedDirectives/*": ["./src/app/shared/directives/*"],
+      "@sharedEnums/*": ["./src/app/shared/enums/*"],
+      "@sharedGuards/*": ["./src/app/shared/guards/*"],
+      "@sharedInterfaces/*": ["./src/app/shared/interfaces/*"],
+      "@sharedRXConst/*": ["./src/app/shared/rxConst/*"],
+      "@sharedServices/*": ["./src/app/shared/services/*"],
+      "@sites/*": ["./src/app/sites/*"],
+    }
   }
 }

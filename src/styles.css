@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+:root {
+    --paleta-col-1: #D92579;
+    --paleta-col-2: #D25EF2;
+    --paleta-col-3: #39BF24;
+    --paleta-col-4: #F2CB05;
+    --paleta-col-5: #D98E04;
+}
+
+
+body {
+    margin: 0px;
+    font-family: 'Raleway', serif;
+}
+
+p:focus, div:focus { 
+    outline: none; 
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.click-here {
+    cursor: pointer;
+}
+
+.text-block {
+    max-width: 640px;
+    margin: auto;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.default-text {
+    font-size: 1.5em;
+    line-height: 1.2em;
+}

@@ -1,0 +1,7 @@
+<div class="header-container" *ngIf="ctrlSrv.isFooterShown$ | async">
+    <footer @brickList fxLayout fxLayoutAlign="space-around center">
+        <div routerLinkActive="activelink" routerLink="/home">start</div>
+        <div routerLinkActive="activelink" routerLink="/promo">promo</div>
+        <div routerLinkActive="activelink" routerLink="/kontakt">kontakt</div>
+    </footer>
+</div>

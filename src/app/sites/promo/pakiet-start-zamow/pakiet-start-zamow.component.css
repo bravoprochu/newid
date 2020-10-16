@@ -1,0 +1,6 @@
+.zamow-container {
+    background-color: var(--paleta-col-4);
+
+    /* min-height: calc(100vh - 50px);
+    min-width: 100vw; */
+}
