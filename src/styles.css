@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+
+
 :root {
     --paleta-col-1: #D92579;
     --paleta-col-2: #D25EF2;
@@ -8,10 +12,15 @@
 }
 
 
+* {
+    font-family: Raleway;
+}
+
 body {
     margin: 0px;
-    font-family: 'Raleway', serif;
 }
+
+
 
 p:focus, div:focus { 
     outline: none; 
