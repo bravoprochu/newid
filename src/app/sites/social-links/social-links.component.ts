@@ -13,12 +13,9 @@ export class SocialLinksComponent implements OnInit, OnDestroy {
   
   ngOnDestroy(): void {
     this.isShown = false;
-    console.log('isShown = false');
-    
   }
   
   ngOnInit(): void {
-    console.log('init social links...');
     this.isShown=true;
   }
 

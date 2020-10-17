@@ -28,7 +28,7 @@ import { SocialLinksComponent } from './sites/social-links/social-links.componen
     FlexLayoutModule
   ],
   exports: [
-    
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]  

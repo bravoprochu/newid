@@ -1,13 +1,13 @@
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 622 1039" style="enable-background:new 0 0 622 1039;" xml:space="preserve">
 <style type="text/css">
-	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st0{filter:url(#Adobe_OpacityMaskFilter12);}
 	.st1{fill:#FFFFFF;stroke:#D98E04;stroke-miterlimit:10;}
 	.st2{mask:url(#strzala_1_);}
-	.st3{fill:url(#SVGID_1_);}
+	.st3{fill:url(#SVGID_1_12);}
 </style>
 <defs>
-	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-8" y="-8" width="625" height="1040">
+	<filter id="Adobe_OpacityMaskFilter12" filterUnits="userSpaceOnUse" x="-8" y="-8" width="625" height="1040">
 		
 			<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
 		<feFlood  style="flood-color:white;flood-opacity:1" result="back"/>
@@ -238,7 +238,7 @@ AAAASUVORK5CYII=" transform="matrix(1 0 0 1 -8 -8)">
 		</image>
 	</g>
 	<g>
-		<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="0" y1="504.915" x2="594.0177" y2="504.915">
+		<linearGradient id="SVGID_1_12" gradientUnits="userSpaceOnUse" x1="0" y1="504.915" x2="594.0177" y2="504.915">
 			<stop  offset="0" style="stop-color:#F2CB05"/>
 			<stop  offset="0.294" style="stop-color:#F2CA07;stop-opacity:0.9308"/>
 			<stop  offset="0.4116" style="stop-color:#F1C70E;stop-opacity:0.9031"/>

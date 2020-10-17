@@ -1,6 +1,32 @@
 .zamow-container {
     background-color: var(--paleta-col-4);
-
-    /* min-height: calc(100vh - 50px);
-    min-width: 100vw; */
 }
+
+.zamow-main {
+    margin: auto;
+    max-width: 640px;
+}
+
+
+
+.zamow-t1 {
+    stroke: var(--paleta-col-1);
+    fill: var(--paleta-col-1);
+    stroke-width: 20;
+    
+}
+.zamow-t2 {
+    fill: var(--paleta-col-2);
+}
+
+
+.circle-fill {
+    animation: color-change 2s infinite;
+  }
+  
+  @keyframes color-change {
+    0% { fill: var(--paleta-col-2); }
+    50% { fill: var(--paleta-col-3) }
+    100% { fill: var(--paleta-col-2) }
+  }
+

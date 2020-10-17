@@ -1,0 +1,23 @@
+.contact-container {
+    max-width: 640px;
+    margin: auto;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.img-logo {
+    margin: auto;
+    width: 200px;
+}
+
+.contact-footer {
+    border-top: 1px solid var(--paleta-col-1);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    max-width: 350px;
+
+}

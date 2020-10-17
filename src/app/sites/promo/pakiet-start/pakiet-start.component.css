@@ -40,3 +40,11 @@ p {
 .pakiet-start-cena {
     margin-top: -25%x;
 }
+
+
+
+.svg-click {
+    fill: none;
+    stroke-width: 2;
+    stroke: azure;
+}
