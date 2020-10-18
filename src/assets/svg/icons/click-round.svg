@@ -1,6 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%"
 	viewBox="0 0 1000 1000">
-	
 
 	<path id="circlePath07" fill="none" d="
         M 500, 500
@@ -14,6 +13,4 @@
 			- - - ZAMAWIAM - - - Click | Click | Click - - - Informacja - - - Click | Click | Click - - - ZAMAWIAM - - - Click | Click | Click
 		</textPath>
 	</text>
-
-	<!-- <circle id="circle-path" cx="50%" cy="50%" r="500" fill="none" stroke="black"></circle> -->
 </svg>
