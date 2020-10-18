@@ -25,6 +25,7 @@ body {
 p:focus, div:focus { 
     outline: none; 
 }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
@@ -35,11 +36,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .text-block {
     max-width: 640px;
     margin: auto;
-    padding-top: 2em;
-    padding-bottom: 2em;
+    /* padding-top: 2em;
+    padding-bottom: 2em; */
+
+    padding: 2em;
 }
 
 .default-text {
     font-size: 1.5em;
     line-height: 1.2em;
+}
+
+.router-link {
+    cursor: pointer;
+    
+    transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.router-link:hover {
+    color: var(--paleta-col-1);
 }
