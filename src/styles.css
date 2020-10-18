@@ -4,6 +4,7 @@
 
 
 :root {
+    --default-font-color: black;
     --paleta-col-1: #D92579;
     --paleta-col-2: #D25EF2;
     --paleta-col-3: #39BF24;
@@ -19,6 +20,23 @@
 body {
     margin: 0px;
 }
+
+
+/* unvisited link */
+a:link {
+    color: var(--default-font-color);
+  }
+  
+  /* visited link */
+  a:visited {
+    color: var(--default-font-color);
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: var(--paleta-col-1);
+  }
+
 
 
 
