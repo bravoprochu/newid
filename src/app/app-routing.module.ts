@@ -10,7 +10,8 @@ const routes: Routes = [
   {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'AboutPage'}  },
     {path: 'contact', redirectTo: 'kontakt', pathMatch: 'full'},
 
-  {path: 'promo', loadChildren: ()=> import('@sites/promo/promo.module').then(m=>m.PromoModule), data: {animation: 'FilterPage'} },
+  {path: 'promocje', loadChildren: ()=> import('@sites/promo/promo.module').then(m=>m.PromoModule), data: {animation: 'FilterPage'} },
+  {path: 'promo', redirectTo: 'promocje', pathMatch: 'full'},
 
 
   
