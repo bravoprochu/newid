@@ -3,10 +3,10 @@ import { ControlService } from 'src/app/services/control.service';
 
 @Component({
   selector: 'app-promo',
-  templateUrl: './promo.component.html',
-  styleUrls: ['./promo.component.css']
+  templateUrl: './promocje.component.html',
+  styleUrls: ['./promocje.component.css']
 })
-export class PromoComponent implements OnInit {
+export class PromocjeComponent implements OnInit {
 
   constructor(private ctrlSrv: ControlService) { }
 

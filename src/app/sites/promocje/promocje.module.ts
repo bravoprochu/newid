@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { PromoRoutingModule } from './promo-routing.module';
+
 import { PakietStartComponent } from './pakiet-start/pakiet-start.component';
-import { PromoComponent } from './promo/promo.component';
 
 import { MatButtonModule} from '@angular/material/button';
 import { MatCardModule} from '@angular/material/card';
 
 import { PakietStartZamowComponent } from './pakiet-start-zamow/pakiet-start-zamow.component';
+import { PromoRoutingModule } from './promocje-routing.module';
+import { PromocjeComponent } from './promocje/promocje.component';
 
 
 
 @NgModule({
-  declarations: [PakietStartComponent, PromoComponent, PakietStartZamowComponent],
+  declarations: [PakietStartComponent, PromocjeComponent, PakietStartZamowComponent],
   imports: [
     CommonModule,
     PromoRoutingModule,
@@ -26,4 +27,4 @@ import { PakietStartZamowComponent } from './pakiet-start-zamow/pakiet-start-zam
     PakietStartZamowComponent
   ]
 })
-export class PromoModule { }
+export class PromocjeModule { }

@@ -3,10 +3,11 @@ import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not-found.component';
 import { PakietStartZamowComponent } from './pakiet-start-zamow/pakiet-start-zamow.component';
 import { PakietStartComponent } from './pakiet-start/pakiet-start.component';
-import { PromoComponent } from './promo/promo.component';
+import { PromocjeComponent } from './promocje/promocje.component';
+
 
 const routes: Routes = [
-  {path: 'home', component: PromoComponent},
+  {path: 'home', component: PromocjeComponent},
   {path: 'pakiet-start', component: PakietStartComponent},
   {path: 'pakiet-start-zamow', component: PakietStartZamowComponent},
   
