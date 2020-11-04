@@ -12,6 +12,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SocialLinksComponent } from './sites/social-links/social-links.component';
 
 
+const IMPORT_EXPORT_MODULES = [
+  FlexLayoutModule
+];
 
 @NgModule({
   declarations: [
@@ -25,10 +28,11 @@ import { SocialLinksComponent } from './sites/social-links/social-links.componen
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    FlexLayoutModule
+    IMPORT_EXPORT_MODULES
   ],
   exports: [
-    BrowserAnimationsModule
+    IMPORT_EXPORT_MODULES
+    // BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]  
