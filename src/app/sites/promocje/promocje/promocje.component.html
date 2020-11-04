@@ -1,18 +1,34 @@
-<div class="promocje-container" fxLayout="row" >
-
-<mat-card>
-    <mat-card-header>
-        <mat-card-title>Pakiet START</mat-card-title>
-        <mat-card-subtitle>Twoja firma w Internecie</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="../../../../assets/images/promocje/newId_pakietStart.png" alt="NewId - Paket Start">
-    <mat-card-content>
-    
-    </mat-card-content>
-    <mat-card-actions>
-        <button mat-flat-button color="accent" routerLink="/promocje/pakiet-start">Zobacz szczegóły</button>
-    </mat-card-actions>
-</mat-card>
+<div fxLayout="row" fxLayoutAlign="center center" class="promocje-container">
 
 
+    <div fxLayout="column" fxLayout.gt-sm="row wrap" fxFlex.gt-sm="0 1 1000px">
+            <mat-card  fxFlex.gt-sm="0 1 calc(50%-10px)">
+                <mat-card-header>
+                    <mat-card-title>Obsługa Marketingowa</mat-card-title>
+                    <mat-card-subtitle>3msc by zrobić różnicę na rynku !</mat-card-subtitle>
+                </mat-card-header>
+                    <img routerLink="/promocje/obsluga-marketingowa-3msc" mat-card-image src="../../../../assets/images/promocje/newId_obsluga_marketingowa_3msc_1x1.png" alt="NewId - Obsluga Marketingowa 3msc">
+                <mat-card-content>
+                
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-flat-button color="warn" routerLink="/promocje/obsluga-marketingowa-3msc">Zobacz szczegóły</button>
+                </mat-card-actions>
+            </mat-card>
+
+
+        <mat-card  fxFlex.gt-sm="0 1 calc(50%-10px)">
+            <mat-card-header>
+                <mat-card-title>Pakiet START</mat-card-title>
+                <mat-card-subtitle>Twoja firma w Internecie</mat-card-subtitle>
+            </mat-card-header>
+                <img routerLink="/promocje/pakiet-start" mat-card-image src="../../../../assets/images/promocje/newId_pakietStart.png" alt="NewId - Paket Start">
+            <mat-card-content>
+            
+            </mat-card-content>
+            <mat-card-actions>
+                <button mat-flat-button color="warn" routerLink="/promocje/pakiet-start">Zobacz szczegóły</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
 </div>

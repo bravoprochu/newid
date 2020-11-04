@@ -6,7 +6,7 @@ import { ControlService } from 'src/app/services/control.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css'],
-  animations: [BP_ANIM_BRICK_LIST(1000,150, 'div')  ]
+  animations: [BP_ANIM_BRICK_LIST(1000,150, 'a')  ]
 })
 export class HeaderComponent implements OnInit {
 

@@ -1,5 +1,9 @@
-.promocje-container {
+/* .promocje-container {
     max-width: 640px;
     margin: auto;
     padding: 1em;
+} */
+
+mat-card {
+    margin: 5px;
 }
