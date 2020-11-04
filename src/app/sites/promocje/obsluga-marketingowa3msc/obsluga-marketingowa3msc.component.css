@@ -1,0 +1,73 @@
+.obsluga-container {
+    position: relative;
+}
+.center-container {
+    margin: auto;
+    max-width: 1000px;
+}
+
+.text-white {
+    color: white;
+}
+ul {
+    font-size: smaller;
+}
+
+.obsluga-informatyczna-title-container {
+    position: absolute;
+    right: 20px;
+    top: 35%;
+
+}
+.obsluga-informatyczna-title {
+    /* fill: var(--paleta-col-1); */
+    fill: white;
+    font-weight: 600;
+    font-family: "Raleway";
+    
+}
+
+.cutout-container {
+    position: relative;
+    display: block;
+    margin: 0;
+}
+
+.cutout{
+    position: relative;
+    top: 50%;
+    left: 0;
+}
+
+.cutout-left {
+    position: absolute;
+    top: 0;
+    width: 60%;
+    height: 100%
+}
+.cutout-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40%;
+    height: 100%
+}
+
+.msc {
+    font-family: "Raleway";
+    font-weight: 400;
+    fill: var(--paleta-col-3);
+}
+
+
+.re-kla-ma {
+    font-family: "Raleway";
+    font-weight: 200px;
+    fill: var(--paleta-col-4);
+}
+
+.pro-mo-cje {
+    font-family: "Raleway";
+    font-weight: 200px;
+    fill: var(--paleta-col-4);
+}
