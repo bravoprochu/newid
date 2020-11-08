@@ -1,12 +1,11 @@
 header {
-    max-width: 300px;
+    max-width: 350px;
     height: 50px;
     margin: auto;
     padding: 10px;    
 }
 
 .menu-link {
-    font-size: medium;
     text-align: center;
     cursor: pointer;
     font-weight: 200;
