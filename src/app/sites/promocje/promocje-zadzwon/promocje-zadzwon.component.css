@@ -1,0 +1,23 @@
+.arrows-to-left {
+    animation: movetoleft 4s ease-in-out infinite;
+    
+}
+
+
+@keyframes movetoleft {
+    0% { transform: translate(0px); }
+    50% { transform: translate(150px);}
+    100% { transform: translate(0px); }
+}
+
+
+.arrows-to-right {
+    animation: movetoright 4s ease-in-out infinite;
+}
+
+
+@keyframes movetoright {
+    0% { transform: translate(0px); }
+    50% { transform: translate(-150px);}
+    100% { transform: translate(0px); }
+}

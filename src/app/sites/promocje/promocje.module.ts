@@ -14,11 +14,13 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ObslugaMarketingowa3mscComponent } from './obsluga-marketingowa3msc/obsluga-marketingowa3msc.component';
 import { PromocjeZadzwonComponent } from './promocje-zadzwon/promocje-zadzwon.component';
 import { ObslugaMarketingowa3mscZamowComponent } from './obsluga-marketingowa3msc-zamow/obsluga-marketingowa3msc-zamow.component';
+import { YtPlayerModule } from 'src/app/shared/ytPlayer/yt-player.module';
 
 
 
 const IMPORT_EXPORT_MODULES = [
   FlexLayoutModule,
+  YtPlayerModule,
   MatButtonModule,
   MatCardModule,
   
@@ -44,7 +46,6 @@ const IMPORT_EXPORT_MODULES = [
   ],
   exports: [
     IMPORT_EXPORT_MODULES,
-    PakietStartZamowComponent
   ]
 })
 export class PromocjeModule { }
