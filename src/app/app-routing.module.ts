@@ -13,6 +13,7 @@ const routes: Routes = [
   {path: 'promocje', loadChildren: ()=> import('@sites/promocje/promocje.module').then(m=>m.PromocjeModule), data: {animation: 'FilterPage'} },
   {path: 'promo', redirectTo: 'promocje', pathMatch: 'full'},
 
+  {path: 'projekty', loadChildren: ()=> import('@sites/projekty/projekty.module').then(m=>m.ProjektyModule), data: {animation: 'FilterPage'} },
 
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},

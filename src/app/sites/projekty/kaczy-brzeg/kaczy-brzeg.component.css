@@ -1,0 +1,31 @@
+a:link {
+    color: white;
+    font-size: smaller;
+}
+
+.kaczy-container {
+    margin:0;
+    padding: 0;
+    background-color: #2C3C58;
+    min-width: 100vw;
+    min-height: 100vh;
+    color: white;
+    
+
+}
+
+.kaczy-content {
+    margin: auto;
+    max-width: 960px;
+    padding: 1em;
+}
+
+h1 {
+    margin-top: 20px;
+    margin-bottom: 1em;
+}
+
+
+.img-container {
+    margin: 10px;
+}
