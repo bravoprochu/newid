@@ -19,6 +19,7 @@
 
 body {
     margin: 0px;
+    font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
 }
 
 
@@ -78,14 +79,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     text-underline-position: below;
 }
 
-.default-text {
-    font-size: calc(1vw + 1vh + 1vmin);
-}
-
 .router-link {
-    cursor: pointer;
-    
+    cursor: pointer;    
     transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-size: larger;
+    
 }
 
 .router-link:hover {
@@ -120,4 +118,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     fill: none;
     stroke-width: 2;
     stroke: azure;
+}
+
+.yt-player-fullsize {
+    margin: auto;
+    max-width: 960px;
 }
