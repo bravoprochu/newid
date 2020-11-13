@@ -10,11 +10,13 @@ header {
     cursor: pointer;
     font-weight: 200;
     width: 100px;
+    font-size: large;
     transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 
 .active-menu-link {
     font-size: x-large;
+    font-weight: 800;
 }
 

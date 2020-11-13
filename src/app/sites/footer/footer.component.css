@@ -1,5 +1,5 @@
 footer {
-    max-width: 350px;
+    max-width: 400px;
     height: 50px;
     margin: auto;
     padding: 10px;    
@@ -10,10 +10,12 @@ footer {
     cursor: pointer;
     font-weight: 200;
     width: 100px;
-    transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+    font-size: large;
+    transition: font-size 0.5s cubic-bezier(0.075, 0.82, 0.165, 1); 
 }
 
 
 .active-menu-link {
     font-size: x-large;
+    font-weight: 800;
 }
