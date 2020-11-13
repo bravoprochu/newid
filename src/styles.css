@@ -51,8 +51,16 @@ p:focus, div:focus {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.click-here {
+.pointer {
     cursor: pointer;
+}
+
+.img-shadow {
+    box-shadow: none;
+    transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.img-shadow:hover {
+    box-shadow: 0 0 20px #333333;
 }
 
 .text-block {
@@ -83,7 +91,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     cursor: pointer;    
     transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
     font-size: larger;
-    
 }
 
 .router-link:hover {
@@ -122,5 +129,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .yt-player-fullsize {
     margin: auto;
+    width: 100%;
     max-width: 960px;
 }

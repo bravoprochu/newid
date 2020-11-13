@@ -1,4 +1,6 @@
+import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { BP_ANIM_OPACITY_INIT } from '@sharedAnimations/bp-anim-opacity-init';
 import { BP_ANIM_SVG_INIT } from '@sharedAnimations/bp_anim_svg-init';
 import { Subject } from 'rxjs';
@@ -21,6 +23,8 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
 
   constructor(
     private ctrlSrv:ControlService,
+    private router: Router,
+    private vieportScroller: ViewportScroller
   ) { }
   
 
