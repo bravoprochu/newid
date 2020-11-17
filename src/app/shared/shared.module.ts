@@ -6,6 +6,7 @@ import { CommonFunctionsService } from './services/common-functions.service';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { TestComponent } from './components/test/test.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { IntersectionDirective } from './directives/intersection.directive';
 
 
 
@@ -14,7 +15,7 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     PageNotFoundComponent,
     SocialButtonsComponent,
     TestComponent,
-    
+    IntersectionDirective,
   ],
   imports: [
     CommonModule,

@@ -10,6 +10,8 @@ import { HeaderComponent } from './sites/header/header.component';
 import { FooterComponent } from './sites/footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SocialLinksComponent } from './sites/social-links/social-links.component';
+import { ImagePreloadComponent } from './otherModules/imagePreload/image-preload/image-preload.component';
+
 
 
 const IMPORT_EXPORT_MODULES = [

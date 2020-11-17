@@ -1,0 +1,32 @@
+svg {
+    margin: 10px;
+}
+
+.rect-anim {
+    stroke:whitesmoke;
+    stroke-width: 2px;
+    stroke-dasharray: 4320;
+    animation-name: frameloop;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+
+@keyframes frameloop {
+    0% {
+        stroke-dashoffset: 4320;
+        stroke-width: 8px;
+        opacity: 1;
+    }
+    79% {
+        stroke-dashoffset: 0;
+        stroke-width: 2px;
+        opacity: 0.2;
+    }
+    99% {
+        stroke-dashoffset: 0;
+        stroke-width: 2px;
+        opacity: 0;
+    }
+
+}

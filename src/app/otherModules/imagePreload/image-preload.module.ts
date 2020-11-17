@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BaxImgPreloaderDirective } from '../bax-img-preloader.directive';
+import { ImagePreloadComponent } from './image-preload/image-preload.component';
 
 
 
 @NgModule({
   declarations: [
-    BaxImgPreloaderDirective
+    ImagePreloadComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    BaxImgPreloaderDirective
+    ImagePreloadComponent
   ]
-
 })
-export class PreloadDirectivesModule { }
+export class ImagePreloadModule { }

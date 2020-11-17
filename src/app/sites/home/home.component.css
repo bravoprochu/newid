@@ -4,6 +4,6 @@
 }
 
 .logo-image {
-    margin: auto;
     max-height: 800px;
+    width: 100%;
 }

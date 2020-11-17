@@ -12,8 +12,7 @@
         </p>
         <div fxLayout="row wrap" fxLayoutAlign="center center">
             <div fxFlex="40">
-                <img width="80%" alt="kaczy brzeg - logo"
-                    src="../../../../assets/projekty/kaczyBrzeg/KaczyBrzeg_signOnly_logo.png" />
+                <app-image-preload width="80%" alt="kaczy brzeg - logo" src="../../../../assets/projekty/kaczyBrzeg/KaczyBrzeg_signOnly_logo.png"></app-image-preload>
             </div>
             <div fxFlex="100" fxFlex.gt-sm="60">
                 <div fxLayout="column" fxLayoutAlignt="space-around center">
@@ -32,20 +31,15 @@
             Tworzenie ofert, prospektów, sugerowanie nowatorskich rozwiązań. Często to właśnie nasze pomysły stawały się
             kluczowymi usługami/produktami identyfikującymi markę.
         </p>
-        <div fxLayout="row wrap" fxLayoutAlign="space-around center">
-            <div class="img-container" fxFlex="100" fxFlex.gt-sm="30">
-                <img width="100%"
-                    src="../../../../assets/projekty/kaczyBrzeg/kaczybrzeg_18stka_Klaudia_thumbnail_1x1.jpg"
-                    alt="KaczyBrzeg - impreza - 18stka w Kaczym Brzegu" />
-            </div>
-            <div class="img-container" fxFlex="100" fxFlex.gt-sm="30">
-                <img width="100%" src="../../../../assets/projekty/kaczyBrzeg/kaczyBrzeg_reset_eko-ogrodek-100.jpg"
-                    alt="KaczyBrzeg eko ogródek" />
-            </div>
-            <div class="img-container" fxFlex="100" fxFlex.gt-sm="30">
-                <img width="100%" src="../../../../assets/projekty/kaczyBrzeg/kaczybrzeg_wesela_folder_2021.jpg"
-                    alt="KaczyBrzeg eko ogródek" />
-            </div>
+        <div @brickList  fxLayout="row wrap" fxLayoutAlign="space-around center">
+            <app-image-preload class="img-container" fxFlex="100" fxFlex.gt-sm="30" src="../../../../assets/projekty/kaczyBrzeg/kaczybrzeg_18stka_Klaudia_thumbnail_1x1.jpg"
+            alt="KaczyBrzeg - impreza - 18stka w Kaczym Brzegu"></app-image-preload>
+
+            <app-image-preload class="img-container" fxFlex="100" fxFlex.gt-sm="30" src="../../../../assets/projekty/kaczyBrzeg/kaczyBrzeg_reset_eko-ogrodek-100.jpg"
+            alt="KaczyBrzeg eko ogródek"></app-image-preload>
+
+            <app-image-preload class="img-container" fxFlex="100" fxFlex.gt-sm="30" src="../../../../assets/projekty/kaczyBrzeg/kaczybrzeg_wesela_folder_2021.jpg"
+            alt="KaczyBrzeg folder weselny"></app-image-preload>
         </div>
 
         <p>
