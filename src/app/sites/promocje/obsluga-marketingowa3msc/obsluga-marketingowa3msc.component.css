@@ -13,6 +13,12 @@ ul {
     font-size: smaller;
 }
 
+li {
+    padding-top: 0.35em;
+    padding-bottom: 0.35em;
+    text-transform: capitalize;
+}
+
 .obsluga-informatyczna-title-container {
     position: absolute;
     right: 20px;
