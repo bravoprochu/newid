@@ -9,12 +9,12 @@ import { PromocjeComponent } from './promocje/promocje.component';
 
 
 const routes: Routes = [
-  {path: 'home', component: PromocjeComponent},
+  {path: 'home', component: PromocjeComponent, data: {animation: 'AboutPage'}},
   
-  {path: 'obsluga-marketingowa-3msc', component: ObslugaMarketingowa3mscComponent},
-  {path: 'obsluga-marketingowa-3msc-zamow', component: ObslugaMarketingowa3mscZamowComponent},
-  {path: 'pakiet-start', component: PakietStartComponent},
-  {path: 'pakiet-start-zamow', component: PakietStartZamowComponent},
+  {path: 'obsluga-marketingowa-3msc', component: ObslugaMarketingowa3mscComponent, data: {animation: 'MainPage'}},
+  {path: 'obsluga-marketingowa-3msc-zamow', component: ObslugaMarketingowa3mscZamowComponent, data: {animation: 'SubPage'}},
+  {path: 'pakiet-start', component: PakietStartComponent, data: {animation: 'MainPage'}},
+  {path: 'pakiet-start-zamow', component: PakietStartZamowComponent, data: {animation: 'SubPage'}},
 
 
   

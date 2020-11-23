@@ -1,9 +1,28 @@
-.links-container {
+.home-container {
+    position: relative;
+    height: calc(100vh - 50px);
+}
+
+.logo-container {
     margin: auto;
-    max-width: 300px;
+    max-height: 800px;
+    max-width: 800px;
 }
 
 .logo-image {
-    max-height: 800px;
     width: 100%;
 }
+
+
+.socials {
+    max-width: 300px;
+    max-height: 75px;
+    width: 100%;
+    margin: auto;
+}
+
+@media only screen and (min-width: 680px) {
+    .logo-image {
+        width: 600px;
+    }
+  }

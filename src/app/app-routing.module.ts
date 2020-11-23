@@ -7,7 +7,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent, data: {animation: 'HomnePage'} },
      
   
-  {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'AboutPage'}  },
+  {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'ContactPage'}  },
     {path: 'contact', redirectTo: 'kontakt', pathMatch: 'full'},
 
   {path: 'promocje', loadChildren: ()=> import('@sites/promocje/promocje.module').then(m=>m.PromocjeModule), data: {animation: 'FilterPage'} },

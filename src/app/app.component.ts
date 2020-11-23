@@ -43,7 +43,7 @@ constructor(
            }
          },
          (error)=>console.log('_routerIvents error', error),
-         ()=>console.log('_routerIvents completed..')
+         ()=>{}
     );
     
   }

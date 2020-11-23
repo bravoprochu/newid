@@ -10,12 +10,16 @@ import { HeaderComponent } from './sites/header/header.component';
 import { FooterComponent } from './sites/footer/footer.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { SocialLinksComponent } from './sites/social-links/social-links.component';
-import { ImagePreloadComponent } from './otherModules/imagePreload/image-preload/image-preload.component';
+import { IntrogadgetModule } from '@otherModules/introGadget/introgadget.module';
+import { ViewportFixerModule } from '@otherModules/viewport-fixer/viewport-fixer.module';
+
 
 
 
 const IMPORT_EXPORT_MODULES = [
-  FlexLayoutModule
+  FlexLayoutModule,
+  IntrogadgetModule,
+  ViewportFixerModule,
 ];
 
 @NgModule({
@@ -34,9 +38,8 @@ const IMPORT_EXPORT_MODULES = [
   ],
   exports: [
     IMPORT_EXPORT_MODULES
-    // BrowserAnimationsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]  
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
