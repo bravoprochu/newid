@@ -6,7 +6,8 @@ import { ProjektyComponent } from './projekty/projekty.component';
 
 const routes: Routes = [
   {path: 'home', component: ProjektyComponent },
-  {path: 'kaczyBrzeg', component: KaczyBrzegComponent},
+  {path: 'kaczyBrzeg', component: KaczyBrzegComponent, data: {animation: 'SubPage'} },
+  {path: 'kaczybrzeg', redirectTo: 'kaczyBrzeg', pathMatch: 'full'},
   
   {path: '', redirectTo: 'kaczyBrzeg', pathMatch: 'full'},
   {path: '**', component: PageNotFoundComponent}
