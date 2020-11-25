@@ -1,191 +1,115 @@
-import { animate, animateChild, group, query, sequence, style, transition, trigger } from '@angular/animations';
+import { animate, animateChild, group, query, sequence, stagger, style, transition, trigger } from '@angular/animations';
+
+const optional = { optional: true }
+
+
+const ANIM_FROM_PROMOCJE = () => {
+  return [
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        left: 0,
+        width: '100%',
+      })
+    ], optional),
+    query(':enter', [
+
+    ])
+
+
+  ]
+}
+
+const ANIM_TO_PROMOCJE = () => {
+  return [
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        left: 0,
+        width: '100%',
+        opacity: 0,
+        transform: 'scale(0) translate3d(0, 100%, 0)'
+      })
+    ], optional),
+    query(':enter', [
+      animate(650,         
+        style({
+          opacity: 1,
+          transform: 'scale(1) translate3d(0, 0, 0)',
+        })
+        ),
+      ]),
+    query(':enter', animateChild())
+  ]
+}
+
+const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card') => {
+  return [
+    query(':enter, :leave', [
+      style({
+        position: 'absolute',
+        [direction]: '100%',
+        opacity: 0,
+      })
+    ], optional),
+    sequence([
+      query(':leave', [
+        animateChild(),
+        style({
+          position: 'absolute',
+          transform: 'translate3d(0,0,0)',
+          width: '100%',
+          left: 0,
+          opacity: 1
+        }),
+        query(queryStr, [
+          stagger(150, [
+            animate('500ms ease-in', style(
+              {
+                transform: 'translate3d(0, -100%, 0)',
+                opacity: 0,
+              })
+            ),
+          ])
+        ], optional)
+      ], optional),
+      query(':enter', [
+        style({ 
+          top: 0,
+          [direction]: '-100%',
+
+        }),
+        animate('350ms ease-out', style({
+          [direction]: 0,
+          opacity: 1
+        }))
+      ], optional)
+    ]),
+    query(':enter', animateChild())
+  ]
+}
+
+
 
 export const BP_ANIM_SLIDEINANIM =
   trigger('routeAnimations', [
     
-    // transition('HomePage <=> AboutPage', [
-    //   style({ position: 'relative' }),
-    //   query(':enter, :leave', [
-    //     style({
-    //       position: 'absolute',
-    //       top: 0,
-    //       left: 0,
-    //       width: '100%'
-    //     })
-    //   ]),
-    //   query(':enter', [
-    //     style({ left: '-100%' })
-    //   ]),
-    //   query(':leave', animateChild()),
-    //   group([
-    //     query(':leave', [
-    //       animate('300ms ease-out', style({ left: '100%' }))
-    //     ]),
-    //     query(':enter', [
-    //       animate('300ms ease-out', style({ left: '0%' }))
-    //     ])
-    //   ]),
-    //   query(':enter', animateChild()),
-    // ]),
 
-    transition('* <=> AboutPage', [
-        style({ position: 'relative' }),
-        query(':enter, :leave', [
-          style({
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%'
-          })
-        ]),
-        query(':enter', [
-          style({ left: '-100%' })
-        ]),
-        query(':leave', animateChild(), {optional: true}),
-        group([
-          query(':leave', [
-            animate('200ms ease-out', style({ left: '100%' }))
-          ], {optional: true}),
-          query(':enter', [
-            animate('300ms ease-out', style({ left: '0%' }))
-          ])
-        ]),
-        query(':enter', animateChild()),
-      ]),
+    transition('Kontakt => Home', ANIM_DIRECTION('right', 'section')),
+    transition('Promocje => Home', ANIM_DIRECTION('right', 'mat-card')),
+    
+    transition('Promocje => Kontakt', ANIM_DIRECTION('left', 'mat-card')),
+    transition('Home => Kontakt', ANIM_DIRECTION('left', 'section')),
+    transition('* => Kontakt', ANIM_DIRECTION('left', 'section')),
 
-    transition('* <=> HomePage', [
-        style({ position: 'relative' }),
-        query(':enter, :leave', [
-          style({
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%'
-          })
-        ]),
-        query(':enter', [
-          style({ left: '-100%' })
-        ]),
-        query(':leave', animateChild(), {optional: true}),
-        group([
-          query(':leave', [
-            animate('200ms ease-out', style({ left: '100%' }))
-          ], {optional: true}),
-          query(':enter', [
-            animate('300ms ease-out', style({ left: '0%' }))
-          ])
-        ]),
-        query(':enter', animateChild()),
-      ]),
+    transition('* => Promocje', ANIM_TO_PROMOCJE()),
 
-    transition('* <=> FilterPage', [
-      style({ position: 'relative' }),
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%'
-        })
-      ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
-      query(':leave', animateChild(), {optional: true}),
-      group([
-        query(':leave', [
-          animate('200ms ease-out', style({ left: '100%' }))
-        ], {optional: true}),
-        query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
-      query(':enter', animateChild()),
-    ]),
-
-
-    transition('* => ContactPage', [
-      style({ position: 'relative' }),
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%'
-        })
-      ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
-      query(':leave', animateChild(), {optional: true}),
-      group([
-        query(':leave', [
-          animate('200ms ease-out', style({ left: '100%' }))
-        ], {optional: true}),
-        query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
-      query(':enter', animateChild()),
-    ]),
-
-
-
-    transition('MainPage <=> SubPage', [
-      style({ position: 'relative' }),
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%'
-        })
-      ]),
-      query(':enter', [
-        style({ left: '-100%' })
-      ]),
-      query(':leave', animateChild(), {optional: true}),
-      group([
-        query(':leave', [
-          animate('200ms ease-out', style({ left: '100%' }))
-        ], {optional: true}),
-        query(':enter', [
-          animate('300ms ease-out', style({ left: '0%' }))
-        ])
-      ]),
-      query(':enter', animateChild()),
-    ]),
+    transition('* => MainPage', ANIM_DIRECTION('left', 'section')),
+    transition('* => SubPage', ANIM_DIRECTION('right', 'section')),
 
 
 
 
-    transition('old => new', [
-      query(':enter, :leave', [
-        style({
-          position: 'absolute',
-        })
-      ]),
-      query(':enter', [
-        style({ top: '-100%' })
-      ]),
-      query(':leave', animateChild(), {optional: true}),
-      sequence([
-        group([
-          query(':leave', [
-            animate(1200, style({ top: '100%' }))
-          ], {optional: true}),
-          query("app-header, app-footer", [
-            animate(1000, style({transform: 'scale(1,0)'}))
-          ], {optional: false}),
-          // query(':enter', [
-          //   animate('1200ms ease-out', style({ top: '0px' }))
-          // ])
-        ]),
-        // query('app-header, app-footer', [
-        //   animate(1000, style({transform: 'scale(1,1'}))
-        // ])        
-      ]),
-      // query(':enter', animateChild()),
-    ])
+
 
   ]);

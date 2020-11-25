@@ -12,6 +12,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { SocialLinksComponent } from './sites/social-links/social-links.component';
 import { IntrogadgetModule } from '@otherModules/introGadget/introgadget.module';
 import { ViewportFixerModule } from '@otherModules/viewport-fixer/viewport-fixer.module';
+import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not-found.component';
 
 
 
@@ -28,7 +29,9 @@ const IMPORT_EXPORT_MODULES = [
     HomeComponent,
     HeaderComponent,
     FooterComponent,
+    PageNotFoundComponent,
     SocialLinksComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -37,6 +40,7 @@ const IMPORT_EXPORT_MODULES = [
     IMPORT_EXPORT_MODULES
   ],
   exports: [
+    PageNotFoundComponent,
     IMPORT_EXPORT_MODULES
   ],
   providers: [],

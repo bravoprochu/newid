@@ -1,0 +1,9 @@
+.not-found-info {
+    margin: 2em;
+    font-size: larger;
+}
+
+.not-found-go-back {
+    margin: 4em;
+    font-size: smaller;
+}

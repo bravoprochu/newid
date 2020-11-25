@@ -11,6 +11,7 @@
 
 .logo-image {
     width: 100%;
+    min-width: 200px;
 }
 
 
@@ -26,3 +27,53 @@
         width: 600px;
     }
   }
+
+
+  .title-container {
+      padding: 1em;
+
+  }
+
+  .title-container:hover  .title {
+    background-color: black;
+    color:white;
+    transform: rotate3d(1, 0, 0, 360deg);
+  }
+
+  .title-container:hover .subtitle {
+    background-color: white;
+    color:black;
+    transform: rotate3d(1, 0, 0, 360deg);
+  }
+
+
+  .title, .subtitle {
+      text-transform: uppercase;
+  }
+
+  .subtitle {
+    background-color: black;
+    font-size: smaller;
+    color: white;
+    text-align: center;
+    transform: rotate3d(1, 0, 0, 0deg);
+    transition: all 0.5s ease-in-out 0.15s; 
+  }
+
+  
+  .title {
+      position: relative;
+      background-color: white;
+      
+      padding:0.5em;
+      font-size: larger;
+      font-weight: 600;
+      transform: rotate3d(1, 0, 0, 0deg);
+      transition: all 0.5s ease-in-out; 
+      text-align: center;
+
+
+  }
+
+
+  

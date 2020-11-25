@@ -4,16 +4,16 @@ import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not
 import { HomeComponent } from '@sites/home/home.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, data: {animation: 'HomnePage'} },
+  {path: 'home', component: HomeComponent, data: {animation: 'Home'} },
      
   
-  {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'ContactPage'}  },
+  {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'Kontakt'}  },
     {path: 'contact', redirectTo: 'kontakt', pathMatch: 'full'},
 
-  {path: 'promocje', loadChildren: ()=> import('@sites/promocje/promocje.module').then(m=>m.PromocjeModule), data: {animation: 'FilterPage'} },
+  {path: 'promocje', loadChildren: ()=> import('@sites/promocje/promocje.module').then(m=>m.PromocjeModule), data: {animation: 'Promocje'} },
   {path: 'promo', redirectTo: 'promocje', pathMatch: 'full'},
 
-  {path: 'projekty', loadChildren: ()=> import('@sites/projekty/projekty.module').then(m=>m.ProjektyModule), data: {animation: 'FilterPage'} },
+  {path: 'projekty', loadChildren: ()=> import('@sites/projekty/projekty.module').then(m=>m.ProjektyModule), data: {animation: 'Projekty'} },
 
   
   {path: '', redirectTo: 'home', pathMatch: 'full'},

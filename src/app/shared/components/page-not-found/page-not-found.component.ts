@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ControlService } from 'src/app/services/control.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private ctrlSrv:ControlService,
+  ) { }
+  
 
-  ngOnInit() {
+  
+  ngOnInit(): void {
+    this.ctrlSrv.isHeaderShown$.next(true);
+    this.ctrlSrv.isFooterShown$.next(false);
   }
 
 }

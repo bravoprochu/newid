@@ -1,3 +1,7 @@
 .router-container {
     position: relative;
 }
+
+main {
+    position: relative;
+}

@@ -3,7 +3,7 @@
 }
 .header-footer {
     margin: auto;   
-    /* max-width: 350px; */
+    max-width: 350px;
     height: 50px;    
     padding: 10px;    
 }
