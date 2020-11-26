@@ -1,5 +1,6 @@
 import { animate, AnimationBuilder, style } from '@angular/animations';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { GET_RANDOM_INIT } from '@sharedConst/get_random_init';
 import { fromEvent, Observable, of, Subject } from 'rxjs';
 import { distinctUntilChanged, map, pairwise, switchMap, takeUntil, tap, throttleTime } from 'rxjs/operators';
 import { IRGBColor } from '../interfaces/i-rgb-color';
@@ -44,6 +45,7 @@ export class IntrogadgetComponent implements OnInit {
   ngOnInit(): void {
     this.initData();
     this.initEvents();
+    this.initColor();
   }
 
   animTime: number = 1500;
@@ -58,6 +60,19 @@ export class IntrogadgetComponent implements OnInit {
   windowHeight: number;
   windowWidth: number;
 
+
+
+
+  initColor() {
+    this.colorTo =  <IRGBColor>{
+      r: GET_RANDOM_INIT(0, 255),
+      g: GET_RANDOM_INIT(0, 255),
+      b: GET_RANDOM_INIT(0, 255),
+    }
+
+    this.paintIt();
+    
+  }
 
 
   initData() {
@@ -142,6 +157,8 @@ export class IntrogadgetComponent implements OnInit {
     const player = anim.create(this.elRef.nativeElement);
     player.play(); 
   }
+
+  
 
 
 }
