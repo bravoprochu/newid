@@ -13,6 +13,8 @@ import { SocialLinksComponent } from './sites/social-links/social-links.componen
 import { IntrogadgetModule } from '@otherModules/introGadget/introgadget.module';
 import { ViewportFixerModule } from '@otherModules/viewport-fixer/viewport-fixer.module';
 import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not-found.component';
+import { SvgCommonModule } from '@otherModules/svg-common/svg-common.module';
+
 
 
 
@@ -21,6 +23,7 @@ const IMPORT_EXPORT_MODULES = [
   FlexLayoutModule,
   IntrogadgetModule,
   ViewportFixerModule,
+  SvgCommonModule
 ];
 
 @NgModule({
@@ -31,7 +34,6 @@ const IMPORT_EXPORT_MODULES = [
     FooterComponent,
     PageNotFoundComponent,
     SocialLinksComponent,
-    
   ],
   imports: [
     BrowserModule,

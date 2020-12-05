@@ -10,8 +10,14 @@
 }
 
 .logo-image {
+    min-width: 250px;
     width: 100%;
-    min-width: 200px;
+    transform: scale3d(1, 1, 1);
+    transition: all 2.35s;
+}
+
+.logo-image:hover {
+    transform: scale3d(1.05, 1.05, 1);
 }
 
 
@@ -20,11 +26,24 @@
     max-height: 75px;
     width: 100%;
     margin: auto;
+    margin-top: 2em;
+    position: relative;
 }
 
-@media only screen and (min-width: 680px) {
+.socials::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 70%;
+    margin-left: 15%;
+    border-top: double 1px white;
+}
+
+@media screen and (min-width: 680px) {
     .logo-image {
-        width: 600px;
+        min-width: 650px;
+        width: 100%;
     }
   }
 
@@ -77,3 +96,13 @@
 
 
   
+svg path {
+    fill: none;
+    stroke: black;
+    stroke-width: 0.02px;
+}
+
+svg:hover path{
+    stroke: white;
+    stroke-width: 0.1px;
+}

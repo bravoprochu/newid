@@ -13,8 +13,7 @@
 
 
 
-
-<div fxLayout="column" fxLayoutAlign="space-between center" class="home-container">
+<div fxLayout="column" class="home-container">
     <div fxLayout="column" fxLayoutAlign="center center">
         <section>
             <div class="logo-container">
@@ -36,7 +35,7 @@
 
     <section>
         <div class="socials">
-            <app-social-links></app-social-links>
+            <app-social-links [delayFullTime]="400" [delayTimeout]="3000"></app-social-links>
         </div>
     </section>
 

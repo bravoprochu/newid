@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterEvent, RouterOutlet } from '@angular/router';
-import { BP_ANIM_SLIDEINANIM as BP_ANIM_ROUTE_SLIDEINANIM } from '@sharedAnimations/bp_anim_router_slideInAnimation';
+import { BP_ROUTES_ANIM as BP_ANIM_ROUTE_SLIDEINANIM } from '@sharedAnimations/bp_anim_routes';
 import { GoogleAnalyticsService } from '@sharedServices/google-analytics.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

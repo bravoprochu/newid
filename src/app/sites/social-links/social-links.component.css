@@ -1,0 +1,17 @@
+.social-icon {
+    transform: scale3d(1, 1, 1);
+}
+
+
+.social-icon:hover path {
+    stroke-width: 30px;
+    stroke: white;
+}
+
+
+.social-icon path {
+    fill: none;
+    stroke: black;
+    stroke-width: 10px;
+    transition: all 0.35s;
+}
