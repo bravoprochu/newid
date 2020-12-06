@@ -14,6 +14,7 @@ import { IntrogadgetModule } from '@otherModules/introGadget/introgadget.module'
 import { ViewportFixerModule } from '@otherModules/viewport-fixer/viewport-fixer.module';
 import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not-found.component';
 import { SvgCommonModule } from '@otherModules/svg-common/svg-common.module';
+import { MenuComponent } from './sites/menu/menu.component';
 
 
 
@@ -34,6 +35,7 @@ const IMPORT_EXPORT_MODULES = [
     FooterComponent,
     PageNotFoundComponent,
     SocialLinksComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

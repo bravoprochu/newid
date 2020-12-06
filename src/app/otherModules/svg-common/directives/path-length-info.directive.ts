@@ -1,17 +1,19 @@
 import { animate, AnimationBuilder, group, sequence, style } from '@angular/animations';
-import { AfterViewInit, Directive, ElementRef, Input, NgZone, OnDestroy, OnInit, Renderer2 } from '@angular/core';
-import { fromEvent, of, Subject } from 'rxjs';
-import { repeat, switchMap, take, takeUntil, tap } from 'rxjs/operators';
+import { Directive, ElementRef, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
+import { fromEvent, Subject } from 'rxjs';
+import { repeat, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { ISVGPathInfo } from '../interfaces/i-svg-path-info';
 
 @Directive({
   selector: '[appPathLengthInfo]'
 })
-export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit {
-  @Input('animTime') animFullTime: number = 750;
-  @Input('animDelay') animDelay: number = 1500;
-  @Input('strokeBig') strokeBig: string = "5px"
-  @Input('parent') parent: ElementRef;
+export class PathLengthInfoDirective implements OnInit, OnDestroy {
+  @Input('animTime') animTime: number = 750;
+  @Input('animDelay') animDelay: number = 0;
+  @Input('divOpacity') divOpacity: number = 0.02;
+  @Input('strokeBigPx') strokeBigPx: number = 5;
+  @Input('zIndex') zIndex: number = -2;
+  
 
 
   constructor(
@@ -28,13 +30,13 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
     this.isDestroyed$.unsubscribe();
   }
 
-  ngAfterViewInit(): void {
-  }
+
 
   ngOnInit(): void {
+    this.parentDiv = this.parentDivFinder();
     this.initObservable();
     this.initPathInfo();
-    this.initAnim(this.animFullTime, this.animDelay);
+    this.initAnim(this.animTime, this.animDelay);
   }
 
 
@@ -42,6 +44,7 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
   bigAbsoluteId: string;
   isDestroyed$: Subject<boolean> = new Subject();
   isPathCounted: boolean;
+  parentDiv: HTMLDivElement;
   pathInfoArr: ISVGPathInfo[];
   pathFullLength: number;
 
@@ -66,11 +69,11 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
 
     const mouseOver$ = fromEvent(this.elRef.nativeElement, 'mouseenter').pipe(
       takeUntil(this.isDestroyed$),
-      tap((d) => {
+      tap(() => {
         this.prepAnimSequenceTrimPath();
         this.bigShow();
       }),
-      switchMap(sw => mouseLeave$),
+      switchMap(() => mouseLeave$),
       repeat(),
       takeUntil(this.isDestroyed$),
     );
@@ -88,8 +91,7 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
 
 
   bigShow() {
-    
-    const _parent = this.renderer.parentNode(this.parent);
+    const _parent = this.parentDiv;
     this.renderer.setStyle(_parent, 'position', 'relative');
 
     let _svg = this.renderer.createElement('svg', 'svg');
@@ -112,13 +114,16 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
 
 
     //
-    // clone paths
+    // FIRST LAYER PATH
+    //
+    //
+    // clone paths bottom paths
     //
     this.pathInfoArr.forEach(p => {
       let _path = p.svgPath.cloneNode() as SVGPathElement;
       this.renderer.setStyle(_path, 'fill', 'none');
       this.renderer.setStyle(_path, 'stroke', 'black');
-      this.renderer.setStyle(_path, 'strokeWidth', this.strokeBig);
+      this.renderer.setStyle(_path, 'strokeWidth', `${this.strokeBigPx}px`);
 
 
       let _pathInfo: ISVGPathInfo = {
@@ -126,14 +131,11 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
         svgPath: _path
       };
 
-
       //
       // path anim time
       //
-
       this.prepAnim(_pathInfo, 1000);
-
-
+      // animFn(_pathInfo, 1000);
       this.renderer.appendChild(_svg, _path);
     });
 
@@ -155,19 +157,8 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
     this.renderer.setStyle(_div, 'width', '50%');
     this.renderer.setStyle(_div, 'height', '50%');
 
-
-    // this.renderer.setStyle(_div, 'top', '0');
-    // this.renderer.setStyle(_div, 'left', '0');
-    // this.renderer.setStyle(_div, 'width', '100%');
-    // this.renderer.setStyle(_div, 'height', '100%');
-
-    // this.renderer.setStyle(_div, 'minWidth', '100vw');
-    // this.renderer.setStyle(_div, 'minHeight', '100vh');
-
-    // this.renderer.setStyle(_div, 'transform', 'perspective(500px)');
-    // this.renderer.setStyle(_div, 'transform', 'rotate3d(0, 1, 0, 35deg)');
-    this.renderer.setStyle(_div, 'zIndex', -2);
-    this.renderer.setStyle(_div, 'opacity', '0.02')
+    this.renderer.setStyle(_div, 'zIndex', this.zIndex);
+    this.renderer.setStyle(_div, 'opacity', this.divOpacity)
 
     this.renderer.appendChild(_div, _svg);
     this.renderer.appendChild(_parent, _div);
@@ -200,7 +191,7 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
 
 
   bigRemove() {
-    const _parent: HTMLElement = this.renderer.parentNode(this.parent);
+    const _parent = this.parentDiv;
     const _childNodes = _parent.getElementsByTagName('div');
 
     for (let d = 0; d < _childNodes.length; d++) {
@@ -249,7 +240,6 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
     // full path length calc
     //
     this.pathFullLength = this.calcPathsLength(this.pathInfoArr);
-
     this.isPathCounted = true;
   }
 
@@ -271,6 +261,26 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
   }
 
 
+  parentDivFinder():HTMLDivElement {
+
+    let _parentNode = this.elRef.nativeElement;
+    let isSearching:boolean = true;
+
+    //
+    // searching div
+    //
+
+    while(_parentNode && isSearching) {
+      if(_parentNode instanceof HTMLDivElement){
+        isSearching = false;
+      } else {
+        _parentNode = this.renderer.parentNode(_parentNode);
+        
+      }
+        
+    }
+    return _parentNode;
+  }
 
 
 
@@ -294,16 +304,16 @@ export class PathLengthInfoDirective implements OnInit, OnDestroy, AfterViewInit
   }
 
 
+
   prepAnimSequenceTrimPath() {
     const _allPathsLength = this.calcPathsLength(this.pathInfoArr);
-
 
     if (!this.isPathCounted || _allPathsLength == 0) { return; }
     let _delay = 0;
 
     this.pathInfoArr.forEach(p => {
       const _pathLengthPercent = p.pathLength / _allPathsLength;
-      const _time = Math.floor(this.animFullTime * _pathLengthPercent);
+      const _time = Math.floor(this.animTime * _pathLengthPercent);
       this.prepAnim(p, _time, _delay);
       _delay += _time;
     });

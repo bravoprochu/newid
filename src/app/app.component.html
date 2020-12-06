@@ -1,17 +1,8 @@
 <app-introgadget></app-introgadget>
-<!-- <div fxLayout="column" fxLayoutAlign="center center">
-    <app-header fxFlex="10" fxFlexAlign="center"></app-header>
-    <div [@routeAnimations]="prepareRoute(outlet)" class="router-container">
-        <router-outlet #outlet="outlet"></router-outlet>
-    </div>
-    <app-footer fxFlex="10"></app-footer>
-</div> -->
-
-
 
 <div>
     <app-header></app-header>
-    <main [@routeAnimations]="prepareRoute(outlet)">
+    <main [@routeAnimations]="prepareRoute(outlet)" class="component-container">
         <router-outlet #outlet="outlet"></router-outlet>
     </main>
     <app-footer></app-footer>
