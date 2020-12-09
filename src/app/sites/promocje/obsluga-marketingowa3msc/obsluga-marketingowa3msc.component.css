@@ -6,9 +6,7 @@
     max-width: 1000px;
 }
 
-.text-white {
-    color: white;
-}
+
 ul {
     font-size: smaller;
 }
@@ -35,8 +33,6 @@ li {
 
 .cutout-container {
     position: relative;
-    display: block;
-    margin: 0;
 }
 
 .cutout{
@@ -57,6 +53,10 @@ li {
     right: 0;
     width: 40%;
     height: 100%
+}
+
+.gotYourBack {
+    padding: 2.5em;
 }
 
 .msc {
@@ -91,6 +91,11 @@ li {
     stroke: black;
     stroke-width:2px;
 }
+
+.part00 {
+    fill: none;
+}
+
 .part01{
     stroke-dasharray: 3087;
     stroke-dashoffset: 3087; 

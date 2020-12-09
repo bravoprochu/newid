@@ -8,23 +8,6 @@ p {
     text-indent: 0.5em;
 }
 
-.pakiet-start-block-1 {
-    background-color: var(--paleta-col-4);
-}
-
-.pakiet-start-block-2 {
-    background-color: var(--paleta-col-2);
-}
-
-.pakiet-start-block-3 {
-    background-color: var(--paleta-col-5);
-}
-
-.empty-line {
-    height: 7px;
-}
-
-
 .pakiet-start-block-content {
     max-width: 650px;
     margin: auto;

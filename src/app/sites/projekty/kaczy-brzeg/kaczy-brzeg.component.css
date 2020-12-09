@@ -4,14 +4,8 @@ a:link {
 }
 
 .kaczy-container {
-    margin:0;
-    padding: 0;
     background-color: #2C3C58;
-    min-width: 100vw;
-    min-height: 100vh;
-    color: white;
-    
-
+    color: white; 
 }
 
 .kaczy-content {
