@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, Input, OnInit } from '@angular/core';
 import { fromEvent, Subject } from 'rxjs';
-import { debounceTime, takeUntil } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 
 @Component({
   selector: 'app-yt-player',
@@ -8,7 +8,8 @@ import { debounceTime, takeUntil } from 'rxjs/operators';
   styleUrls: ['./yt-player.component.css']
 })
 export class YtPlayerComponent implements OnInit, AfterViewInit {
-  @Input('id') id: string = 'Bd384WTfhDo';
+  @Input('id') id: string = 'IIIgdZNxVaM';
+  @Input('scale') scale: number = 0.95;
 
   constructor(
     private elRef: ElementRef
@@ -21,14 +22,13 @@ export class YtPlayerComponent implements OnInit, AfterViewInit {
   }
   
   
-  ngAfterViewInit(): void {
-    
+  ngAfterViewInit(): void {   
 
     setTimeout(()=>{
       this.recalcWidthAndHeight();
       this.initVideo();
       this.isVideoShown = true;
-    })
+    }, 1500)
   }
 
 
@@ -38,11 +38,12 @@ export class YtPlayerComponent implements OnInit, AfterViewInit {
 
 
 
+  isApiLoaded: boolean;
   isDestroyed$: Subject<boolean> = new Subject();
   isVideoShown: boolean
   videoWidth: number = 320;
   videoHeight: number = 180;
-  videoRatio: number = 1.8;
+  videoRatio: number = 1.618033;
 
 
   initObservables(){
@@ -60,18 +61,26 @@ export class YtPlayerComponent implements OnInit, AfterViewInit {
   }
 
 
+  playerReady(ev: Event) {
+    console.log('player ready: ', ev);
+  }
+
+
   initVideo(){
-    const tag = document.createElement('script');
-    tag.src = 'https://www.youtube.com/iframe_api';
-    document.body.appendChild(tag);
+    if(!this.isApiLoaded) {
+      const tag = document.createElement('script');
+      tag.src = 'https://www.youtube.com/iframe_api';
+      document.body.appendChild(tag);
+    }
+    
     
   }
 
   private recalcWidthAndHeight() {
     const el = (<HTMLElement>this.elRef.nativeElement);
-    this.videoWidth = Math.round(el.parentElement.clientWidth * 1);
+    // this.videoWidth = Math.round(el.parentElement.clientWidth * 1);
+    this.videoWidth = Math.round(el.parentElement.getBoundingClientRect().width * this.scale);
     this.videoHeight = Math.round(this.videoWidth / this.videoRatio);
-     // console.log('width/height:', this.videoWidth, this.videoHeight);
   }
 
 }
