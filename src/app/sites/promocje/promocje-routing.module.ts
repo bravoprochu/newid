@@ -6,6 +6,7 @@ import { ObslugaMarketingowa3mscComponent } from './obsluga-marketingowa3msc/obs
 import { PakietStartZamowComponent } from './pakiet-start-zamow/pakiet-start-zamow.component';
 import { PakietStartComponent } from './pakiet-start/pakiet-start.component';
 import { PromocjeComponent } from './promocje/promocje.component';
+import { ReklamaTwojegoProduktuComponent } from './reklama-twojego-produktu/reklama-twojego-produktu.component';
 
 
 const routes: Routes = [
@@ -15,7 +16,7 @@ const routes: Routes = [
   {path: 'obsluga-marketingowa-3msc-zamow', component: ObslugaMarketingowa3mscZamowComponent, data: {animation: 'SubPage'} },
   {path: 'pakiet-start', component: PakietStartComponent, data: {animation: 'MainPage'}},
   {path: 'pakiet-start-zamow', component: PakietStartZamowComponent, data: {animation: 'SubPage'}},
-
+  {path: 'reklama-twojego-produktu-facebook-google', component: ReklamaTwojegoProduktuComponent, data: {animation: 'MainPage'}},
 
   
   

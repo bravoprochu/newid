@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-
 import { PakietStartComponent } from './pakiet-start/pakiet-start.component';
 
 import { MatButtonModule} from '@angular/material/button';
@@ -15,14 +14,19 @@ import { ObslugaMarketingowa3mscComponent } from './obsluga-marketingowa3msc/obs
 import { PromocjeZadzwonComponent } from './promocje-zadzwon/promocje-zadzwon.component';
 import { ObslugaMarketingowa3mscZamowComponent } from './obsluga-marketingowa3msc-zamow/obsluga-marketingowa3msc-zamow.component';
 import { YtPlayerModule } from 'src/app/shared/ytPlayer/yt-player.module';
+import { ReklamaTwojegoProduktuComponent } from './reklama-twojego-produktu/reklama-twojego-produktu.component';
+import { ImagePreloadModule } from '@otherModules/imagePreload/image-preload.module';
+import { SvgCommonModule } from '@otherModules/svg-common/svg-common.module';
 
 
 
 const IMPORT_EXPORT_MODULES = [
   FlexLayoutModule,
+  ImagePreloadModule,
   YtPlayerModule,
   MatButtonModule,
   MatCardModule,
+  SvgCommonModule,
   
 ];
 
@@ -35,7 +39,8 @@ const IMPORT_EXPORT_MODULES = [
     PakietStartZamowComponent,
     ObslugaMarketingowa3mscComponent,
     PromocjeZadzwonComponent,
-    ObslugaMarketingowa3mscZamowComponent
+    ObslugaMarketingowa3mscZamowComponent,
+    ReklamaTwojegoProduktuComponent
   ],
   imports: [
     CommonModule,
