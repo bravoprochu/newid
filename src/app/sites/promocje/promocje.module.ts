@@ -27,7 +27,6 @@ const IMPORT_EXPORT_MODULES = [
   MatButtonModule,
   MatCardModule,
   SvgCommonModule,
-  
 ];
 
 
