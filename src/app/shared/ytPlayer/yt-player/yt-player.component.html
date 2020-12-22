@@ -1,5 +1,5 @@
     <div class="app-yt-player-container" fxLayout="row" fxLayoutAlign="center center">
-        <youtube-player *ngIf="isVideoShown" [width]="videoWidth" [height]="videoHeight" [videoId]="id" (stateChange)="playerReady($event)" >
+        <youtube-player #youtubePlayer *ngIf="isVideoShown" [width]="videoWidth" [height]="videoHeight" [videoId]="id" (ready)="playerReady($event)" (stateChange)="stateChange($event)" >
         </youtube-player>
     </div>
     
