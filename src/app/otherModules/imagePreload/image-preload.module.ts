@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ImagePreloadComponent } from './image-preload/image-preload.component';
-import { AppearFromBottomDirective } from './appear-from-bottom.directive';
+import { AppearIntersectionFromBottomDirective } from './appear-intersection-from-bottom.directive';
 
 
 
 @NgModule({
   declarations: [
     ImagePreloadComponent,
-    AppearFromBottomDirective
+    AppearIntersectionFromBottomDirective
   ],
   imports: [
     CommonModule
   ],
   exports: [
     ImagePreloadComponent,
-    AppearFromBottomDirective
+    AppearIntersectionFromBottomDirective
   ]
 })
 export class ImagePreloadModule { }

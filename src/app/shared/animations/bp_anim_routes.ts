@@ -75,12 +75,12 @@ const ANIM_TO_PROMOCJE = () => {
   ]
 }
 
-const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card') => {
+const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card', position: string = "relative") => {
   return [
     query(':enter, :leave', [
       style({
-        position: 'absolute',
-        [direction]: '100%',
+         position: position,
+         [direction]: '-100%',
         opacity: 0,
       })
     ], optional),
@@ -110,17 +110,18 @@ export const BP_ROUTES_ANIM =
     transition('Kontakt => Home', ANIM_DIRECTION('right', 'section')),
     transition('Promocje => Home', ANIM_DIRECTION('right', 'mat-card')),
     
+    
     transition('Promocje => Kontakt', ANIM_DIRECTION('left', 'mat-card')),
     transition('Home => Kontakt', ANIM_DIRECTION('left', 'section')),
     transition('* => Kontakt', ANIM_DIRECTION('left', 'section')),
 
     transition('* => Promocje', ANIM_TO_PROMOCJE()),
 
-    transition('* => MainPage', ANIM_DIRECTION('left', 'section')),
-    transition('* => SubPage', ANIM_DIRECTION('right', 'section')),
+    transition('* => MainPage', ANIM_DIRECTION('left', 'section', 'absolute')),
+    transition('* => SubPage', ANIM_DIRECTION('right', 'section', 'absolute')),
 
 
-
+    transition('* => Home', ANIM_DIRECTION('right', 'section')),
 
 
 
