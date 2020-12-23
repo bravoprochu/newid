@@ -34,19 +34,23 @@
                     xlink:href="../../../../assets/svg/promocje/obsluga_marketingowa/3_cutout.png"></image>
             </svg>
         </div>
+
     </section>
 
 
     <section class="bg-1">
-        <h1>
-            Trzy miesiące <strong>bardzo</strong> intensywnej pracy!
-        </h1>
+        <div appAppearIntersectionFromBottom [appearElementsToAnim]="'h1, .text-duzy'">
+            <h1>
+                Trzy miesiące <strong>bardzo</strong> intensywnej pracy
+            </h1>
 
-        <div class="text-duzy">
-            Nie traćmy <strong><i>czasu</i></strong>
+            <div class="text-duzy">
+                Nie traćmy <strong><i>czasu&nbsp;!</i></strong>
+            </div>
         </div>
 
-        <div class="text-block">
+
+        <div class="text-block" appAppearIntersectionFromBottom [appearElementsToAnim]="'span, li'" [appearIntersectionRatio]="0.5">
             <span class="text-underline">Plan jest prosty:</span><br>
             <ul>
                 <li>przedstawiamy nowy wizerunek firmy</li>
@@ -62,29 +66,33 @@
         </div>
     </section>
 
-    <section class="bg-3">
+    <section appAppearIntersectionFromBottom [appearElementsToAnim]="'svg, h1, p'" [appearIntersectionRatio]="0.5" class="bg-3">
 
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 340"
-            preserveAspectRatio="xMidYMid meet">
-            <image x="5%" y="-5%" height="110%"
-                xlink:href="../../../../assets/svg/promocje/obsluga_marketingowa/biznes_tarcza.svg"></image>
-            <text text-anchor="end" x="90%" y="70%" class="obsluga-informatyczna-title" font-size="40">TWOJA
-                WŁASNA</text>
-            <text text-anchor="end" x="90%" y="95%" class="obsluga-informatyczna-title" font-size="60">BIZNES
-                TARCZA</text>
-        </svg>
+        <div class="img-tarcza">
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1080 340"
+                preserveAspectRatio="xMidYMid meet">
+                <image x="5%" y="-5%" height="110%"
+                    xlink:href="../../../../assets/svg/promocje/obsluga_marketingowa/biznes_tarcza.svg"></image>
+                <text text-anchor="end" x="90%" y="70%" class="obsluga-informatyczna-title" font-size="40">TWOJA
+                    WŁASNA</text>
+                <text text-anchor="end" x="90%" y="95%" class="obsluga-informatyczna-title" font-size="60">BIZNES
+                    TARCZA</text>
+            </svg>
+        </div>
 
 
 
         <div class="text-block">
             <article>
                 <h1>Jesteśmy tuż obok!</h1>
-                <p>By nasze rozwiązanie było skuteczne, <strong>musimy się poznać</strong>. Obecne warunki troszeczkę to
+                <p>By nasze rozwiązanie było skuteczne, <strong>musimy się poznać</strong>. Obecne warunki
+                    troszeczkę to
                     utrudniają jednak damy sobie radę z epidemią <i>COVID </i> i skutecznie przygotujemy wymagane
                     materiały.
                 </p>
                 <p>
-                    Większość pracy wykonamy <strong>zdalnie</strong> jednak zbieranie kontentu; tworzenie klipów video,
+                    Większość pracy wykonamy <strong>zdalnie</strong> jednak zbieranie kontentu; tworzenie klipów
+                    video,
                     fotografia, wymagana konsultacja - lokalnie w siedzibie Waszej firmy/w "terenie" - zachowując
                     maksymalne środki bezpieczeństwa.
                 </p>
@@ -95,7 +103,7 @@
 
 
 
-    <section class="bg-1">
+    <section appAppearIntersectionFromBottom [appearElementsToAnim]="'h1, p, svg'" [appearIntersectionRatio]="0" class="bg-1">
         <h1>
             Znamy realia
         </h1>
@@ -113,7 +121,8 @@
 
                     <g @opacityInit *ngIf="isLogoVisible">
                         <image x="50%" y="35%" width="35%" height="35%"
-                            xlink:href="../../../../assets/svg/newId_logo_white.svg" preserveAspectRatio="xMidYMid meet">
+                            xlink:href="../../../../assets/svg/newId_logo_white.svg"
+                            preserveAspectRatio="xMidYMid meet">
                         </image>
                         <text text-anchor="end" x="81%" y="68%" font-size="30" font-family="Raleway"
                             font-weight="bold">GotYourBack</text>
@@ -195,17 +204,19 @@
                 </svg>
             </div>
         </div>
-     
+
 
 
     </section>
 
 
 
-    <section class="bg-3">
-                <h1>Co by tu wypromować...</h1>
+    <section appAppearIntersectionFromBottom [appearElementsToAnim]="'h1'" [appearIntersectionRatio]="0" class="bg-3">
+        
+        <h1>Co by tu wypromować...</h1>
 
-            <div class="text-block">
+        <div class="text-block">
+            <div appAppearIntersectionFromBottom [appearElementsToAnim]="'p'" [appearIntersectionRatio]="0.3">
                 <p>
                     Poniżej przedstawiamy, naszym zdaniem doskonały przykład, pokazujący jak działamy.<br>Koncentrujemy
                     się
@@ -225,54 +236,57 @@
                         !</STRONG> ...a inwestycja abyśmy <strong>Wam</strong> w tym pomogli okaże się <strong>ogromnym
                         SUKCESEM.</strong>
                 </p>
-                <p>
-                    Naszą domeną jest <strong>subtelny sposób</strong> przedstawienia
-                    <strong>biznesu</strong>, treści istotnych do zakomunikowania w <strong>lekki</strong> i
-                    <strong>przyjmeny dla oka</strong> sposób. Nie narzucamy się i nie wciskamy nic na siłę. Z dystansem
-                    i
-                    <strong>z polotem!</strong>
-                </p>
-                <p>
-                    Dobry wizerunek firmy wpływa na sprzedaż. <strong>Fajne</strong> marki sprzedają więcej!
-                    <!-- Dziś wszyscy <strong>"kręcą klipy"</strong>... My byliśmy pionierami na tej płaszczyźnie -->
-                </p>
-            </div>
-
-            
-            <div class="img-container">
-                <img width="100%" routerLink="/projekty/kaczyBrzeg" class="img-shadow pointer"
-                    src="../../../../assets/projekty/kaczyBrzeg/newId_projekty_poznaj_kaczyBrzeg.jpg"
-                    alt="Poznaj nasz przykładowy projekt - KaczyBrzeg">
 
             </div>
-                
 
 
-
-
-            <div class="text-block">
-                <p>
-                    <span class="router-link" routerLink="/projekty/kaczyBrzeg">KaczyBrzeg</span> to przykład naszego
-                    <strong>sposóbu myślenia.</strong> Do każdej marki podchodzimy <strong>indywidualnie.</strong>
-                    W każdym przypadku szukamy <strong>unikatowych cech</strong> które eksponujemy w wyjątkowy sposób.
-                </p>
-                <p>
-                    Jeśli jesteście zainteresowani współpracą, zapraszamy do <span class="router-link"
-                        routerLink="/kontakt">kontaktu</span><br>
-                    Przekonaj się ze razem <strong>zrobimy różnicę na rynku!</strong>
-                </p>
+            <div appAppearIntersectionFromBottom [appearElementsToAnim]="'p'" [appearIntersectionRatio]="0.3">
+            <p>
+                Naszą domeną jest <strong>subtelny sposób</strong> przedstawienia
+                <strong>biznesu</strong>, treści istotnych do zakomunikowania w <strong>lekki</strong> i
+                <strong>przyjmeny dla oka</strong> sposób. Nie narzucamy się i nie wciskamy nic na siłę. Z dystansem
+                i
+                <strong>z polotem!</strong>
+            </p>
+            <p>
+                Dobry wizerunek firmy wpływa na sprzedaż. <strong>Fajne</strong> marki sprzedają więcej!
+                <!-- Dziś wszyscy <strong>"kręcą klipy"</strong>... My byliśmy pionierami na tej płaszczyźnie -->
+            </p>
             </div>
+        </div>
+
+
+        <div class="img-container" appAppearIntersectionFromBottom [appearElementsToAnim]="'img'" [appearIntersectionRatio]="0.3">
+            <img width="100%" routerLink="/projekty/kaczyBrzeg" class="img-shadow pointer"
+                src="../../../../assets/projekty/kaczyBrzeg/newId_projekty_poznaj_kaczyBrzeg.jpg"
+                alt="Poznaj nasz przykładowy projekt - KaczyBrzeg">
+
+        </div>
+
+
+
+
+
+        <div class="text-block" appAppearIntersectionFromBottom [appearElementsToAnim]="'p'" [appearIntersectionRatio]="0.3">
+            <p>
+                <span class="router-link" routerLink="/projekty/kaczyBrzeg">KaczyBrzeg</span> to przykład naszego
+                <strong>sposóbu myślenia.</strong> Do każdej marki podchodzimy <strong>indywidualnie.</strong>
+                W każdym przypadku szukamy <strong>unikatowych cech</strong> które eksponujemy w wyjątkowy sposób.
+            </p>
+            <p>
+                Jeśli jesteście zainteresowani współpracą, zapraszamy do <span class="router-link"
+                    routerLink="/kontakt">kontaktu</span><br>
+                Przekonaj się ze razem <strong>zrobimy różnicę na rynku!</strong>
+            </p>
+        </div>
     </section>
 
 
 
 
-    <section class="bg-3">
-            <!-- <app-promocje-zadzwon routerLink="/promocje/obsluga-marketingowa-3msc-zamow"></app-promocje-zadzwon> -->
-            <app-promocje-zadzwon routerLink="/kontakt"></app-promocje-zadzwon>
+    <section class="bg-3" appAppearIntersectionFromBottom [appearElementsToAnim]="'app-promocje-zadzwon'" [appearIntersectionRatio]="1">
+        <!-- <app-promocje-zadzwon routerLink="/promocje/obsluga-marketingowa-3msc-zamow"></app-promocje-zadzwon> -->
+        <app-promocje-zadzwon routerLink="/kontakt"></app-promocje-zadzwon>
     </section>
-
-
-
 
 </div>
