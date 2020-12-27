@@ -1,6 +1,11 @@
+
 import { AfterViewInit, Component, OnInit } from '@angular/core';
-import {} from '@sharedAnimations/bp_anim_enter_leave_from_side'
+import {Meta, Title} from '@angular/platform-browser'
+import { ActivatedRoute } from '@angular/router';
+
 import { ControlService } from 'src/app/services/control.service';
+import { IMetadata } from 'src/app/services/metadata/i-metadata';
+import { MetadataService } from 'src/app/services/metadata/metadata.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +15,9 @@ import { ControlService } from 'src/app/services/control.service';
 export class HomeComponent implements OnInit, AfterViewInit {
 
   constructor(
-    private ctrlSrv: ControlService
+    private ctrlSrv: ControlService,
+    private metaSrv: MetadataService,
+    private activatedRoute: ActivatedRoute
     ) { }
   
   
@@ -19,6 +26,12 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
+    const _data = this.activatedRoute.snapshot.data as IMetadata
+    this.metaSrv.updateMetadata(_data);
+
+    console.log('data', _data);
+
+
     this.ctrlSrv.isHeaderShown$.next(true);
     this.ctrlSrv.isFooterShown$.next(false);
   }

@@ -1,10 +1,12 @@
 import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BP_ANIM_OPACITY_INIT } from '@sharedAnimations/bp-anim-opacity-init';
 import { BP_ANIM_SVG_INIT } from '@sharedAnimations/bp_anim_svg-init';
 import { Subject } from 'rxjs';
 import { ControlService } from 'src/app/services/control.service';
+import { IMetadata } from 'src/app/services/metadata/i-metadata';
+import { MetadataService } from 'src/app/services/metadata/metadata.service';
 
 @Component({
   selector: 'app-obsluga-marketingowa3msc',
@@ -23,8 +25,9 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
 
   constructor(
     private ctrlSrv:ControlService,
-    private router: Router,
-    private vieportScroller: ViewportScroller
+    private activatedRoute: ActivatedRoute,
+    private metadataSrv: MetadataService
+
   ) { }
   
 
@@ -38,6 +41,8 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.ctrlSrv.isHeaderShown$.next(false);
     this.ctrlSrv.isFooterShown$.next(true);
+
+    this.metadataSrv.updateMetadata(this.activatedRoute.snapshot.data as IMetadata);
   }
 
   ngAfterViewInit(): void {

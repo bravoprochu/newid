@@ -4,7 +4,7 @@ import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not
 import { HomeComponent } from '@sites/home/home.component';
 
 const routes: Routes = [
-  {path: 'home', component: HomeComponent, data: {animation: 'Home'} },
+  {path: 'home', component: HomeComponent, data: {animation: 'Home', title: 'NewId - Nowa Tożsamość Twojej Firmy. Agencja Marketingowa, Agencja Reklamowa. Kładziemy nacisk na wyjątkowość', description: 'Zróbmy wynik 💰 Świeżość 🌱, nieszablonowe 💥indywidualne podejście ☝️ wysoka skuteczność 🎯 olbrzymie zaangażowanie 😅🙋 Spraw Swojej Firmie Prezent ! Reklama Twojego produktu, fotografia, grafika, animacje, code.'} },
      
   
   {path: 'kontakt', loadChildren: ()=> import('@sites/contact/contact.module').then(m=>m.ContactModule), data: {animation: 'Kontakt'}  },

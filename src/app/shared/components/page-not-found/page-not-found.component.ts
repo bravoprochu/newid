@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Meta, Title } from '@angular/platform-browser';
 import { ControlService } from 'src/app/services/control.service';
+import { IMetadata } from 'src/app/services/metadata/i-metadata';
+import { MetadataService } from 'src/app/services/metadata/metadata.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -10,6 +13,8 @@ export class PageNotFoundComponent implements OnInit {
 
   constructor(
     private ctrlSrv:ControlService,
+    private meta: Meta,
+    private title: Title
   ) { }
   
 
@@ -17,6 +22,22 @@ export class PageNotFoundComponent implements OnInit {
   ngOnInit(): void {
     this.ctrlSrv.isHeaderShown$.next(true);
     this.ctrlSrv.isFooterShown$.next(false);
+
+    this.updateMeta();
+
+
+
+
+
+  }
+
+  updateMeta(){
+    this.title.setTitle('NewId - Nie znaleziono strony');
+    this.meta.updateTag({
+      name: 'robots',
+      content: 'noindex'
+    });
+
   }
 
 }
