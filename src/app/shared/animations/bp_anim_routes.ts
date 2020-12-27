@@ -80,7 +80,7 @@ const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card', positi
     query(':enter, :leave', [
       style({
          position: position,
-         [direction]: '-100%',
+         [direction]: '-200%',
         opacity: 0,
       })
     ], optional),
@@ -89,7 +89,7 @@ const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card', positi
       query(':enter', [
         style({ 
           top: 0,
-          [direction]: '-100%',
+          [direction]: '-200%',
         }),
         animate('350ms ease-out', style({
           [direction]: 0,
