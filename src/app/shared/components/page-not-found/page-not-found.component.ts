@@ -32,7 +32,7 @@ export class PageNotFoundComponent implements OnInit {
   }
 
   updateMeta(){
-    this.title.setTitle('NewId - Nie znaleziono strony');
+    this.title.setTitle('404 - Nie znaleziono strony');
     this.meta.updateTag({
       name: 'robots',
       content: 'noindex'

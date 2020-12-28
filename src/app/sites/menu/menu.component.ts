@@ -14,8 +14,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.linkToHome = this.router.url;
-    console.log(this.linkToHome);
-
   }
 
 

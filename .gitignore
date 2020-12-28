@@ -4,6 +4,11 @@
 /dist
 /tmp
 /out-tsc
+
+
+#sitemap
+/src/sitemap.xml
+
 # Only exists if Bazel was run
 /bazel-out
 
