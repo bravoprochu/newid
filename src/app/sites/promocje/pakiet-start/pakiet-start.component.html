@@ -80,14 +80,18 @@
             <image x="-1000" y="0" width="200%" height="200%"
                 xlink:href="../../../../assets/svg/promocje/promocja-start/strzalka.svg"></image>
 
-            <image class="pointer" routerLink="/promocje/pakiet-start-zamow" x="350" y="150" width="80%" height="80%"
+            <a href="/promocje/pakiet-start-zamow">
+                <image class="pointer"  x="350" y="150" width="80%" height="80%"
                 xlink:href="../../../../assets/svg/promocje/promocja-start/cena_2000.svg"></image>
+            </a>
         </svg>
     </section>
 
 
     <div class="bg-4" appAppearIntersectionFromBottom [appearElementsToAnim]="'app-promocje-zadzwon'" [appearIntersectionRatio]="1">
-        <app-promocje-zadzwon routerLink="/promocje/pakiet-start-zamow"></app-promocje-zadzwon>
+        <a href="/promocje/pakiet-start-zamow">
+            <app-promocje-zadzwon></app-promocje-zadzwon>
+        </a>
     </div>
 
 </div>

@@ -15,9 +15,6 @@ export class MetadataService {
 
 
   updateMetadata(data: IMetadata) {
-
-    console.log('service data:', data);
-
     this.title.setTitle(data.title ? data.title : 'NewId - Agencja Marketingowa, Nowa Tożsamość Twojej Firmy');
 
     const t: MetaDefinition = { name: 'description', content: data.description }

@@ -257,9 +257,11 @@
 
 
         <div class="img-container" appAppearIntersectionFromBottom [appearElementsToAnim]="'img'" [appearIntersectionRatio]="0.3">
-            <img width="100%" routerLink="/projekty/kaczyBrzeg" class="img-shadow pointer"
+            <a href="/projekty/kaczyBrzeg">
+            <img width="100%" class="img-shadow pointer"
                 src="../../../../assets/projekty/kaczyBrzeg/newId_projekty_poznaj_kaczyBrzeg.jpg"
                 alt="Poznaj nasz przykładowy projekt - KaczyBrzeg">
+            </a>
 
         </div>
 
@@ -269,13 +271,12 @@
 
         <div class="text-block" appAppearIntersectionFromBottom [appearElementsToAnim]="'p'" [appearIntersectionRatio]="0.3">
             <p>
-                <span class="router-link" routerLink="/projekty/kaczyBrzeg">KaczyBrzeg</span> to przykład naszego
+                <a href="/projekty/kaczyBrzeg"><span class="router-link">KaczyBrzeg</span></a> to przykład naszego
                 <strong>sposóbu myślenia.</strong> Do każdej marki podchodzimy <strong>indywidualnie.</strong>
                 W każdym przypadku szukamy <strong>unikatowych cech</strong> które eksponujemy w wyjątkowy sposób.
             </p>
             <p>
-                Jeśli jesteście zainteresowani współpracą, zapraszamy do <span class="router-link"
-                    routerLink="/kontakt">kontaktu</span><br>
+                Jeśli jesteście zainteresowani współpracą, zapraszamy do <a href="/kontakt"><span class="router-link">kontaktu</span></a><br>
                 Przekonaj się ze razem <strong>zrobimy różnicę na rynku!</strong>
             </p>
         </div>
@@ -285,8 +286,9 @@
 
 
     <section class="bg-3" appAppearIntersectionFromBottom [appearElementsToAnim]="'app-promocje-zadzwon'" [appearIntersectionRatio]="1">
-        <!-- <app-promocje-zadzwon routerLink="/promocje/obsluga-marketingowa-3msc-zamow"></app-promocje-zadzwon> -->
-        <app-promocje-zadzwon routerLink="/kontakt"></app-promocje-zadzwon>
+        <a href="/kontakt">
+        <app-promocje-zadzwon></app-promocje-zadzwon>
+        </a>
     </section>
 
 </div>

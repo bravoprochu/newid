@@ -26,11 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const _data = this.activatedRoute.snapshot.data as IMetadata
-    this.metaSrv.updateMetadata(_data);
-
-    console.log('data', _data);
-
+    this.metaSrv.updateMetadata(this.activatedRoute.snapshot.data as IMetadata);
 
     this.ctrlSrv.isHeaderShown$.next(true);
     this.ctrlSrv.isFooterShown$.next(false);
