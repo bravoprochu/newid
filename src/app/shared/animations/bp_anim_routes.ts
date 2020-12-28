@@ -112,6 +112,7 @@ export const BP_ROUTES_ANIM =
     
     
     transition('Promocje => Kontakt', ANIM_DIRECTION('left', 'mat-card')),
+    transition('Promocje => MainPage', ANIM_DIRECTION('left', 'mat-card')),
     transition('Home => Kontakt', ANIM_DIRECTION('left', 'section')),
     transition('* => Kontakt', ANIM_DIRECTION('left', 'section')),
 
