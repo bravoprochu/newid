@@ -15,7 +15,7 @@ const ANIM_LEAVE_DIRECTION_TO_TOP = (queryStr: string = 'section')=> {
     }),
     query(queryStr, [
       stagger(150, [
-        animate('500ms ease-in', style(
+        animate('250ms ease-in', style(
           {
             transform: 'translate3d(0, -100%, 0)',
             opacity: 0,
@@ -25,6 +25,42 @@ const ANIM_LEAVE_DIRECTION_TO_TOP = (queryStr: string = 'section')=> {
     ], optional)
   ], optional)
 }
+
+const ANIM_ENTER_DIRECTION_TO_TOP = (queryStr: string = 'section') => {
+  return query(':enter', [
+    style({
+      position: 'absolute',
+      width: '100%',
+      left: 0,
+      opacity: 1
+      
+    }),
+    group([
+      query(queryStr, [
+        group([
+          stagger(150, [
+            style({
+              position: 'relative',
+              transform: 'translate3d(0, -100%, 0)',          
+            }),
+            animate('350ms ease-out', style(
+              {
+                transform: 'translate3d(0, 0, 0)',
+                opacity: 1,
+              })
+            ),
+          ]),
+        ]),
+      ], optional),
+    ]),
+    animateChild()
+  ])
+  
+}
+
+
+
+
 
 
 const ANIM_FROM_PROMOCJE = () => {
@@ -86,18 +122,12 @@ const ANIM_DIRECTION = (direction: string, queryStr: string = 'mat-card', positi
     ], optional),
     sequence([
       ANIM_LEAVE_DIRECTION_TO_TOP(queryStr),
-      query(':enter', [
-        style({ 
-          top: 0,
-          [direction]: '-200%',
-        }),
-        animate('350ms ease-out', style({
-          [direction]: 0,
-          opacity: 1
-        }))
-      ], optional)
-    ]),
-    query(':enter', animateChild())
+      ANIM_ENTER_DIRECTION_TO_TOP(queryStr)
+      
+
+    ])
+    
+    // query(':enter', animateChild())
   ]
 }
 
@@ -108,10 +138,10 @@ export const BP_ROUTES_ANIM =
     
 
     transition('Kontakt => Home', ANIM_DIRECTION('right', 'section')),
-    transition('Promocje => Home', ANIM_DIRECTION('right', 'mat-card')),
-    
-    
-    transition('Promocje => Kontakt', ANIM_DIRECTION('left', 'mat-card')),
+    transition('Promocje => Home', ANIM_DIRECTION('right', 'section')),
+
+  
+    transition('Promocje => Kontakt', ANIM_DIRECTION('left', 'section')),
     transition('Promocje => MainPage', ANIM_DIRECTION('left', 'mat-card')),
     transition('Home => Kontakt', ANIM_DIRECTION('left', 'section')),
     transition('* => Kontakt', ANIM_DIRECTION('left', 'section')),
