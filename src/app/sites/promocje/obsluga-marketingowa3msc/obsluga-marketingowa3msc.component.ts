@@ -1,4 +1,3 @@
-import { ViewportScroller } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BP_ANIM_OPACITY_INIT } from '@sharedAnimations/bp-anim-opacity-init';
@@ -55,6 +54,7 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
   isLogoVisible: boolean;
   isDestroyed$: Subject<boolean> = new Subject();
   siteMargin: number = 0.9;
+  //windowSliderElementToScroll: ElementRef = window;
   
 
   intersecObsGotYourBack:IntersectionObserver;

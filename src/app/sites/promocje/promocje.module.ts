@@ -17,6 +17,7 @@ import { YtPlayerModule } from 'src/app/shared/ytPlayer/yt-player.module';
 import { ReklamaTwojegoProduktuComponent } from './reklama-twojego-produktu/reklama-twojego-produktu.component';
 import { ImagePreloadModule } from '@otherModules/imagePreload/image-preload.module';
 import { SvgCommonModule } from '@otherModules/svg-common/svg-common.module';
+import { WindowSliderModule } from '@otherModules/windowSlider/window-slider.module';
 
 
 
@@ -27,6 +28,7 @@ const IMPORT_EXPORT_MODULES = [
   MatButtonModule,
   MatCardModule,
   SvgCommonModule,
+  WindowSliderModule
 ];
 
 

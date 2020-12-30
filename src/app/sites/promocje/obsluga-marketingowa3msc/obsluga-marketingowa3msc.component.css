@@ -1,3 +1,9 @@
+::ng-deep body {
+        overflow-y: hidden
+    }
+
+
+
 .obsluga-container {
     position: relative;
 }
@@ -141,6 +147,22 @@ li {
 }
 
 
+
+.window-slider-container {
+    position: fixed;
+    top: 50%;
+    left: 35px;
+    background-color: rgba(0,0,0,0.1);
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    z-index: 10;
+
+}
+
+.window-slider-container :first {
+    margin: auto;
+}
 
 
 .youtube-player-bg {
