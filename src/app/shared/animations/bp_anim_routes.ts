@@ -148,8 +148,8 @@ export const BP_ROUTES_ANIM =
 
     transition('* => Promocje', ANIM_TO_PROMOCJE()),
 
-    transition('* => MainPage', ANIM_DIRECTION('left', 'section', 'absolute')),
-    transition('* => SubPage', ANIM_DIRECTION('right', 'section', 'absolute')),
+    transition('* => MainPage', ANIM_DIRECTION('left', 'section')),
+    transition('* => SubPage', ANIM_DIRECTION('right', 'section')),
 
 
     transition('* => Home', ANIM_DIRECTION('right', 'section')),
