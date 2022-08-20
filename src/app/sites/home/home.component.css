@@ -22,7 +22,7 @@
 
 
 .socials {
-    max-width: 300px;
+    max-width: 350px;
     max-height: 75px;
     width: 100%;
     margin: auto;
@@ -76,26 +76,26 @@
     color: white;
     text-align: center;
     transform: rotate3d(1, 0, 0, 0deg);
-    transition: all 0.5s ease-in-out 0.15s; 
+    transition: all 0.5s ease-in-out 0.15s;
   }
 
-  
+
   .title {
       position: relative;
       background-color: white;
-      
+
       padding:0.5em;
       font-size: larger;
       font-weight: 600;
       transform: rotate3d(1, 0, 0, 0deg);
-      transition: all 0.5s ease-in-out; 
+      transition: all 0.5s ease-in-out;
       text-align: center;
 
 
   }
 
 
-  
+
 svg path {
     fill: none;
     stroke: black;
