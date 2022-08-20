@@ -1,0 +1,23 @@
+.container {
+    position: fixed;
+    left: 10px;
+    top: 0;
+    height: 100vh; 
+}
+
+.slider-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+  
+}
+
+.slider-box {
+    position: relative
+}
+
+.slider {
+    margin-left: 10px;
+    height: 500px;
+}

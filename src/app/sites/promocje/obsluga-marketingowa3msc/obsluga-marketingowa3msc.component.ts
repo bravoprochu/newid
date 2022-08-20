@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ComponentFactoryResolver, ElementRef, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BP_ANIM_OPACITY_INIT } from '@sharedAnimations/bp-anim-opacity-init';
 import { BP_ANIM_SVG_INIT } from '@sharedAnimations/bp_anim_svg-init';
+import { PageNotFoundComponent } from '@sharedComponents/page-not-found/page-not-found.component';
 import { Subject } from 'rxjs';
 import { ControlService } from 'src/app/services/control.service';
 import { IMetadata } from 'src/app/services/metadata/i-metadata';
@@ -20,12 +21,17 @@ import { MetadataService } from 'src/app/services/metadata/metadata.service';
 })
 export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
   @ViewChild('svgGotYourBack') svgGotYourBack: ElementRef;
+
+
   
 
   constructor(
     private ctrlSrv:ControlService,
     private activatedRoute: ActivatedRoute,
-    private metadataSrv: MetadataService
+    private metadataSrv: MetadataService,
+    
+    private containerRef: ViewContainerRef,
+    private resolver: ComponentFactoryResolver
 
   ) { }
   
@@ -46,6 +52,9 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.initIntersectionObservableGotyourBack();
+
+    this.tempInit();
+
   }
 
   apiLoaded: boolean
@@ -54,10 +63,17 @@ export class ObslugaMarketingowa3mscComponent implements OnInit, AfterViewInit {
   isLogoVisible: boolean;
   isDestroyed$: Subject<boolean> = new Subject();
   siteMargin: number = 0.9;
-  //windowSliderElementToScroll: ElementRef = window;
   
 
   intersecObsGotYourBack:IntersectionObserver;
+
+
+  tempInit() {
+    const comp = this.resolver.resolveComponentFactory(PageNotFoundComponent);
+
+    this.containerRef.createComponent(comp,0);
+    
+  }
 
 
   initIntersectionObservableGotyourBack() {

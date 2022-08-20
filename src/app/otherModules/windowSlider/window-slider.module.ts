@@ -2,9 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WindowSliderComponent } from './window-slider/window-slider.component';
 import {MatSliderModule} from '@angular/material/slider'
+import {ScrollingModule} from '@angular/cdk/scrolling'
 
 const IMPORT_EXPORT_MODULES = [
-  MatSliderModule
+  MatSliderModule,
+  ScrollingModule
 ];
 
 @NgModule({
