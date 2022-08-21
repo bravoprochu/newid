@@ -37,6 +37,15 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "assets": [
+                "src/favicon.ico",
+                "src/assets",
+                {
+                  "glob": ".htaccess",
+                  "input": "src",
+                  "output": "/"
+                }
+              ],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
